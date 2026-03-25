@@ -151,3 +151,8 @@ Thumbs.db
 # BPE vocabulary files
 *.bpe
 *.vocab
+
+# Geo Dataset
+sam3/train/data/geo/train/reference/
+sam3/train/data/geo/test/reference/
+sam3/train/data/geo/experiments/

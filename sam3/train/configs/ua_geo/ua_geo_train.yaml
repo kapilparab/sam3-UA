@@ -12,7 +12,7 @@ paths:
 
 # Dataset configuration
 geo_seg:
-  num_images: 1000 # Note: This is the number of images used for training. If null, all images are used.
+  num_images: 100 # Note: This is the number of images used for training. If null, all images are used.
   supercategory: geo_segmentation
 
   # Training transforms pipeline
@@ -423,7 +423,7 @@ submitit:
   partition: null
   qos: null
   timeout_hour: 72
-  use_cluster: True
+  use_cluster: False
   cpus_per_task: 10
   port_range: [10000, 65000]
   constraint: null

@@ -6,9 +6,9 @@ defaults:
 # Paths Configuration (Chage this to your own paths)
 # ============================================================================
 paths:
-  dataset_dir: ../../data/geo/
-  experiment_log_dir: ../../data/geo/expriments/
-  bpe_path: ../../../assets/bpe_simple_vocab_16e6.txt.gz # This should be under sam3/assets/bpe_simple_vocab_16e6.txt.gz
+  dataset_dir: /home/u21/kapilparab/sam3-UA/sam3/train/data/geo/
+  experiment_log_dir: /home/u21/kapilparab/sam3-UA/sam3/train/data/geo/experiments/
+  bpe_path: /home/u21/kapilparab/sam3-UA/sam3/assets/bpe_simple_vocab_16e6.txt.gz # This should be under sam3/assets/bpe_simple_vocab_16e6.txt.gz
 
 # Dataset configuration
 geo_seg:
@@ -140,7 +140,7 @@ geo_seg:
           loss_dice: 10.0
         compute_aux: false
     loss_fn_semantic_seg:
-      _target_: sam3.losses.loss_fns.SemanticSegCriterion
+      _target_: sam3.train.loss.loss_fns.SemanticSegCriterion
       presence_head: True
       presence_loss: False  # Change
       focal: True
@@ -414,7 +414,7 @@ trainer:
 
 launcher:
   num_nodes: 1
-  gpus_per_node: 2
+  gpus_per_node: 1
   experiment_log_dir: ${paths.experiment_log_dir}
   multiprocessing_context: forkserver
 

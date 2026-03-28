@@ -22,9 +22,9 @@ geo_seg:
         - _target_: sam3.train.transforms.filter_query_transforms.FlexibleFilterFindGetQueries
           query_filter:
             _target_: sam3.train.transforms.filter_query_transforms.FilterCrowds
-        - _target_: sam3.train.transforms.point_sampling.RandomizeInputBbox
-          box_noise_std: 0.1
-          box_noise_max: 20
+        # - _target_: sam3.train.transforms.point_sampling.RandomizeInputBbox
+        #   box_noise_std: 0.1
+        #   box_noise_max: 20
         - _target_: sam3.train.transforms.segmentation.DecodeRle
         - _target_: sam3.train.transforms.basic_for_api.RandomResizeAPI
           sizes:
